@@ -1,0 +1,41 @@
+.rce-container-mlist.message-list {
+  height: 490px;
+}
+
+.rce-container-clist {
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.friends-box {
+  background-color: #EBEBEB;
+  border-radius: 15px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.react-swipeable-view-container {
+  height: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+  .menu-icon {
+    display: inline;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .ant-row.window {
+    width: 850px;
+  }
+}
+
+@media only screen and (min-height: 555px) {
+  .ant-row.window {
+    height: 555px;
+  }
+}

@@ -4,8 +4,21 @@ import { generateReducers } from "automate-redux";
 // Initial state of redux
 const initialState = {
   uiState: {
-    pendingRequests: 0
-  }
+    isLoggedIn: false,
+    app_initializing: false,
+    pendingRequests: 0,
+    isMobileScreen: false
+  },
+  profile: {
+    name: ""
+  },
+  currentChat: {
+    friendName: "",
+    chatroom_id: "",
+  },
+  suggestedFriends: [],
+  chatrooms: [],
+  chats: []
 };
 
 // Generate reducers with the initial state and pass it to the redux store

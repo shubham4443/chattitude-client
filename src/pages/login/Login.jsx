@@ -1,42 +1,49 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import './login.css';
+import { Form, Input, Button } from 'antd';
+import {useHistory} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {set} from 'automate-redux';
+import Chattitude from '../../assets/large_chattitude.png';
+
+//services
+import {login} from '../../services/authenticate';
+//utils
+import {notify} from '../../utils';
 
 const Login = () => {
-  const layout = {
-    labelCol: {
-      span: 8,
-    },
-    wrapperCol: {
-      span: 16,
-    },
-  };
-  const tailLayout = {
-    wrapperCol: {
-      offset: 8,
-      span: 16,
-    },
-  };
+
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   const onFinish = values => {
-    console.log('Success:', values);
+    login(values)
+    .then(({data, status}) => {
+      if (status !== 200) {
+        notify("error", "There was some error in signing in", "Please check your credentials and try again", 5);
+        return;
+      }
+      notify("success", "Successfully logged in!", "", 5);
+      dispatch(set("profile.name", data.name))
+      dispatch(set("uiState.isLoggedIn", true))
+      history.push("/");
+    })
   };
 
-  const onFinishFailed = errorInfo => {
-    console.log('Failed:', errorInfo);
-  };
   return (
+    <div className="login-form">
+    <img src={Chattitude} alt="chattitude" style={{width: '100%', height: 'auto'}}/>
     <Form
-    {...layout}
     name="basic"
     initialValues={{
       remember: true,
     }}
     onFinish={onFinish}
-    onFinishFailed={onFinishFailed}
+    layout="vertical"
   >
     <Form.Item
       label="Username"
-      name="username"
+      name="name"
       rules={[
         {
           required: true,
@@ -60,16 +67,15 @@ const Login = () => {
       <Input.Password />
     </Form.Item>
 
-    <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-      <Checkbox>Remember me</Checkbox>
-    </Form.Item>
-
-    <Form.Item {...tailLayout}>
-      <Button type="primary" htmlType="submit">
-        Submit
+    <Form.Item>
+      <Button type="primary" htmlType="submit" style={{width: "100%"}}>
+        Login
       </Button>
+      <div style={{textAlign: "center", fontWeight: "bolder", margin: "10px 0px"}}>OR</div>
+      <Button type="primary" style={{width: "100%"}} onClick={() => history.push("/register")}>Register</Button>
     </Form.Item>
   </Form>
+  </div>
   )
 }
 

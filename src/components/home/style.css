@@ -1,0 +1,13 @@
+.search-user-list .rce-citem-body--top-time {
+  display: none;
+}
+
+.rce-citem-body--bottom .rce-citem-body--bottom-title {
+  color: gray;
+}
+
+.mobile-view-friends-box {
+  background-color: #EBEBEB;
+  padding: 10px;
+  height: 100%;
+}
