@@ -11,3 +11,11 @@
   padding: 10px;
   height: 100%;
 }
+
+.mobile-view-chat-box {
+  height: 100%;
+}
+
+.rce-container-mlist.message-list {
+  height: calc(100% - 75px);
+}

@@ -31,7 +31,7 @@ const ChatBox = ({socket, slideRight}) => {
   };
 
   return (
-    <>
+    <div className="mobile-view-chat-box">
       <div
         style={{
           height: 35,
@@ -70,7 +70,7 @@ const ChatBox = ({socket, slideRight}) => {
         onSearch={onSend}
         onChange={(e) => setText(e.target.value)}
       />
-    </>
+    </div>
   );
 };
 
