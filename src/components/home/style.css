@@ -17,7 +17,7 @@
 }
 
 .rce-container-mlist.message-list {
-  height: calc(100% - 70px);
+  height: calc(100% - 80px);
 }
 
 .rce-mbox-text {
