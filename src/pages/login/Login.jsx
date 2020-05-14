@@ -75,7 +75,7 @@ const Login = () => {
       <Button type="primary" style={{width: "100%"}} onClick={() => history.push("/register")}>Register</Button>
     </Form.Item>
   </Form>
-  <a className="portfolio" href="https://shubham-nazare1.web.app/" rel="noopener noreferrer" target="_blank">MY PORTFOLIO HERE</a>
+  <a className="login-portfolio" href="https://shubham-nazare1.web.app/" rel="noopener noreferrer" target="_blank">MY PORTFOLIO HERE</a>
   </div>
   )
 }

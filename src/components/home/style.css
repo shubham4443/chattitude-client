@@ -61,3 +61,18 @@
     text-align: center;
     width: 100%;
 }
+
+.login-portfolio {
+  color: black;
+    font-size: 12px;
+    font-style: normal;
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+    font-variant: normal;
+    font-weight: 600;
+    letter-spacing: 6.4px;
+    line-height: 28.8px;
+    font-family: AlegreyaSans;
+    text-align: center;
+    width: 100%;
+}
