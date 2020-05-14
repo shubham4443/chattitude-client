@@ -22,13 +22,14 @@ const FriendsBox = ({socket, logout, slideLeft}) => {
   const suggestedFriends = useSelector((state) => state.suggestedFriends);
   const name = useSelector((state) => state.profile.name);
   const chatrooms = useSelector((state) => state.chatrooms);
+  const counter = useSelector(state => state.uiState.counter);
 
   useEffect(() => {
     dispatch(increment('uiState.pendingRequests'));
     getChatrooms(name)
       .then((res) => dispatch(set('chatrooms', res)))
       .finally(() => dispatch(decrement('uiState.pendingRequests')));
-  }, [isSearchVisible, dispatch, name]);
+  }, [isSearchVisible, dispatch, name, counter]);
 
   const fetchChats = (chatroom_id, friendName) => {
     dispatch(increment('uiState.pendingRequests'));

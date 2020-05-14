@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 //antd
 import { Input } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { push } from 'automate-redux';
+import { push, increment } from 'automate-redux';
 const { Search } = Input;
 
 const ChatBox = ({socket, slideRight}) => {
@@ -32,18 +32,11 @@ const ChatBox = ({socket, slideRight}) => {
 
   return (
     <div className="mobile-view-chat-box">
-      <div
-        style={{
-          height: 35,
-          borderBottom: '1px solid #d3d3d3',
-          fontSize: 20,
-          textAlign: 'center',
-        }}
-      >
+      <div className="chat-box-title">
         <ArrowLeftOutlined
           className='menu-icon'
           style={{ float: 'left', marginLeft: 10, marginTop: 7 }}
-          onClick={slideRight}
+          onClick={() => {dispatch(increment("uiState.counter"));slideRight()}}
         />
         <b>{friendName}</b>
       </div>
@@ -56,8 +49,7 @@ const ChatBox = ({socket, slideRight}) => {
         chats.map((val) => ({
         position: val.userFrom === name ? 'right' : 'left',
         text: val.text,
-        date: new Date(val.date),
-        status: 'received',
+        date: new Date(val.date)
       }))
       : []
     }

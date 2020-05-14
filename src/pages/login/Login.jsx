@@ -42,7 +42,6 @@ const Login = () => {
     layout="vertical"
   >
     <Form.Item
-      label="Username"
       name="name"
       rules={[
         {
@@ -51,11 +50,10 @@ const Login = () => {
         },
       ]}
     >
-      <Input />
+      <Input placeholder="Username" />
     </Form.Item>
 
     <Form.Item
-      label="Password"
       name="password"
       rules={[
         {
@@ -64,7 +62,7 @@ const Login = () => {
         },
       ]}
     >
-      <Input.Password />
+      <Input.Password placeholder="Password" />
     </Form.Item>
 
     <Form.Item>

@@ -5,8 +5,6 @@ import { verifyToken } from './services/authenticate';
 import { useDispatch, useSelector } from 'react-redux';
 import { set } from 'automate-redux';
 import 'react-chat-elements/dist/main.css';
-// antd
-import {Spin} from 'antd';
 
 function App() {
   const dispatch = useDispatch();
@@ -30,10 +28,8 @@ function App() {
 
   }))
 
-  const pendingRequests = useSelector(state => state.pendingRequests)
   return (
     <div className={isMobileScreen ? "App" : "large-view-App"}>
-      {pendingRequests > 0 && <Spin spinning={true} size="large" />}
       <Routes />
     </div>
   );

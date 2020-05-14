@@ -52,7 +52,6 @@ const Register = () => {
         layout='vertical'
       >
         <Form.Item
-          label='Username'
           name='name'
           rules={[
             {
@@ -61,11 +60,10 @@ const Register = () => {
             },
           ]}
         >
-          <Input />
+          <Input placeholder="Username" />
         </Form.Item>
 
         <Form.Item
-          label='Password'
           name='password'
           rules={[
             {
@@ -74,7 +72,7 @@ const Register = () => {
             },
           ]}
         >
-          <Input.Password />
+          <Input.Password placeholder="Password" />
         </Form.Item>
 
         <Form.Item>

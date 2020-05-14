@@ -7,7 +7,8 @@ const initialState = {
     isLoggedIn: false,
     app_initializing: false,
     pendingRequests: 0,
-    isMobileScreen: false
+    isMobileScreen: false,
+    counter: 0
   },
   profile: {
     name: ""
