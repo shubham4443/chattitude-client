@@ -4,7 +4,7 @@ import { Form, Input, Button } from 'antd';
 import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {set} from 'automate-redux';
-import Chattitude from '../../assets/large_chattitude.png';
+/* import Chattitude from '../../assets/large_chattitude.png'; */
 
 //services
 import {login} from '../../services/authenticate';
@@ -19,8 +19,8 @@ const Login = () => {
   const onFinish = values => {
     login(values)
     .then(({data, status}) => {
-      if (status !== 200) {
-        notify("error", "There was some error in signing in", "Please check your credentials and try again", 5);
+      if (status !== 200 || data.status === "error") {
+        notify("error", data.message, "", 5);
         return;
       }
       notify("success", "Successfully logged in!", "", 5);
@@ -32,7 +32,7 @@ const Login = () => {
 
   return (
     <div className="login-form">
-    <img src={Chattitude} alt="chattitude" style={{width: '100%', height: 'auto'}}/>
+    {/* <img src={Chattitude} alt="chattitude" style={{width: '100%', height: 'auto'}}/> */}
     <Form
     name="basic"
     initialValues={{

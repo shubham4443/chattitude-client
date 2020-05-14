@@ -131,7 +131,7 @@ const FriendsBox = ({socket, logout, slideLeft}) => {
           className='chat-list'
           dataSource={chatrooms.map((val) => ({
             avatar:
-              'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+              'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/123383058/original/9c9b46210539cdaefcda8ec65df2192a6aacdf0f/draw-anime-style-for-you.png',
             title: val.user,
             subtitle: val.docs.last_text,
             date: new Date(val.docs.date),
@@ -145,7 +145,7 @@ const FriendsBox = ({socket, logout, slideLeft}) => {
           className='search-user-list'
           dataSource={suggestedFriends.map((val) => ({
             avatar:
-              'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+              'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/123383058/original/9c9b46210539cdaefcda8ec65df2192a6aacdf0f/draw-anime-style-for-you.png',
             alt: 'Avatar.js',
             title: val,
           }))}

@@ -12,8 +12,8 @@ export const logout = () => {
   .catch(ex => ex);
 }
 
-export const register = ({name, password}) => {
-  return axios.post(`${process.env.REACT_APP_API_URL}/register`, {name, password})
+export const register = ({name, password, email}) => {
+  return axios.post(`${process.env.REACT_APP_API_URL}/register`, {name, password, email})
   .then(({data, status}) => ({data, status}))
   .catch(ex => ex);
 }

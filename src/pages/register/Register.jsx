@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import { useHistory } from 'react-router-dom';
-import Chattitude from '../../assets/large_chattitude.png'
 
 //services
 import { register } from '../../services/authenticate';
@@ -26,23 +25,18 @@ const Register = () => {
         notify(
           'success',
           'Successfully registered!',
-          'Now log in with the credentials',
-          5
+          'Check your inbox to verify your email and then login',
+          10
         );
         history.push('/login');
       } else if (data.type === 'error') {
-        notify('error', 'Username already exists', '', 5);
+        notify('error', 'Username or email already exists', '', 5);
       }
     });
   };
 
   return (
     <div className='login-form'>
-      <img
-        src={Chattitude}
-        alt='chattitude'
-        style={{ width: '100%', height: 'auto' }}
-      />
       <Form
         name='basic'
         initialValues={{
@@ -60,7 +54,14 @@ const Register = () => {
             },
           ]}
         >
-          <Input placeholder="Username" />
+          <Input placeholder='Username' />
+        </Form.Item>
+
+        <Form.Item
+        name='email'
+          rules={[{ type: 'email' }]}
+        >
+          <Input placeholder="Email"/>
         </Form.Item>
 
         <Form.Item
@@ -72,7 +73,7 @@ const Register = () => {
             },
           ]}
         >
-          <Input.Password placeholder="Password" />
+          <Input.Password placeholder='Password' />
         </Form.Item>
 
         <Form.Item>
