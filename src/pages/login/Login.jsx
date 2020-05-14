@@ -2,9 +2,9 @@ import React from 'react';
 import './login.css';
 import { Form, Input, Button } from 'antd';
 import {useHistory} from 'react-router-dom';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {set} from 'automate-redux';
-/* import Chattitude from '../../assets/large_chattitude.png'; */
+import Chattitude from '../../assets/large_chattitude.png';
 
 //services
 import {login} from '../../services/authenticate';
@@ -15,6 +15,8 @@ const Login = () => {
 
   const history = useHistory();
   const dispatch = useDispatch();
+
+  const isMobileScreen = useSelector(state => state.uiState.isMobileScreen);
 
   const onFinish = values => {
     login(values)
@@ -32,7 +34,7 @@ const Login = () => {
 
   return (
     <div className="login-form">
-    {/* <img src={Chattitude} alt="chattitude" style={{width: '100%', height: 'auto'}}/> */}
+    {!isMobileScreen && <img src={Chattitude} alt="chattitude" style={{width: '100%', height: 'auto'}}/>}
     <Form
     name="basic"
     initialValues={{
@@ -73,6 +75,7 @@ const Login = () => {
       <Button type="primary" style={{width: "100%"}} onClick={() => history.push("/register")}>Register</Button>
     </Form.Item>
   </Form>
+  <a className="portfolio" href="https://shubham-nazare1.web.app/" rel="noopener noreferrer" target="_blank">MY PORTFOLIO HERE</a>
   </div>
   )
 }

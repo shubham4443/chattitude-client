@@ -1,3 +1,8 @@
+@font-face{
+  font-family: AlegreyaSans;
+  src: url(AlegreyaSans.otf);
+}
+
 .search-user-list .rce-citem-body--top-time {
   display: none;
 }
@@ -23,6 +28,7 @@
   border-radius: 25px 25px 0px 0px;
   padding-top: 15px;
   box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-image: url('../../assets//chatbox_background.jpg');
 }
 
 .chat-box-title {
@@ -34,4 +40,27 @@
 
 .rce-mbox-text {
   padding: 8px;
+}
+
+.portfolio {
+  color: black;
+    font-size: 12px;
+    font-style: normal;
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+    font-variant: normal;
+    font-weight: 600;
+    letter-spacing: 6.4px;
+    line-height: 28.8px;
+    font-family: AlegreyaSans;
+    position: absolute;
+    bottom: 2px;
+    text-align: center;
+    width: 298px;
+}
+
+@media only screen and (max-width: 298px) {
+  .portfolio {
+    width: 100%;
+  }
 }

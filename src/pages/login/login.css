@@ -12,3 +12,9 @@
     background-image: url('../../assets/cats_background.jpg');
   }
 }
+
+@media only screen and (min-width: 500px) {
+  .login-form {
+    width: 450px;
+  }
+}

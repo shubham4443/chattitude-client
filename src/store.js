@@ -17,7 +17,7 @@ const initialState = {
     friendName: "",
     chatroom_id: "",
   },
-  suggestedFriends: ["shubham4443", "LightYagami", "walter_white", "Tony Soprano", "Lelouch", "Vito Corleone"],
+  suggestedFriends: ["shubham4443", "LightYagami", "walter_white", "Tony Soprano", "Lelouch", "Vito Corleone", "Freddie_Mercury"],
   chatrooms: [],
   chats: []
 };

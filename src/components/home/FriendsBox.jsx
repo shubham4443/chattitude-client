@@ -126,6 +126,7 @@ const FriendsBox = ({socket, logout, slideLeft}) => {
         />
       )}
       {!isSearchVisible && (
+        <>
         <ChatList
           onClick={(val) => openChatroom(val.title)}
           className='chat-list'
@@ -138,6 +139,8 @@ const FriendsBox = ({socket, logout, slideLeft}) => {
             unread: name === val.docs.user1 ? val.docs.user1unread : val.docs.user2unread,
           }))}
         />
+        <a className="portfolio" href="https://shubham-nazare1.web.app/" rel="noopener noreferrer" target="_blank">MY PORTFOLIO HERE</a>
+        </>
       )}
       {isSearchVisible && (
         <ChatList
