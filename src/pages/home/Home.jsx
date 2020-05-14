@@ -60,7 +60,7 @@ const Home = () => {
       )}
       {!isMobileScreen && (
         <Row className='window' gutter={0}>
-          <Col sm={10} xs={24} className='friends-box'>
+          <Col sm={10} xs={24} className='friends-box' style={{overflowX: 'hidden'}} >
             <FriendsBox socket={socket} logout={onLogoutBtnClick} slideLeft={() => setIndex(1)} />
           </Col>
           <Col sm={14} xs={0} style={styles.chatBox}>
