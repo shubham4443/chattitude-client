@@ -1,6 +1,6 @@
 import React from 'react';
 import './login.css';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Alert } from 'antd';
 import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {set} from 'automate-redux';
@@ -34,6 +34,13 @@ const Login = () => {
       .then(subscription => subscribeToPushNoti(data.name, subscription));
     })
   };
+
+  const alertMsg = (
+    <div>
+      Info <br />
+      Enable notifications for this site to receive message notifications.
+    </div>
+  );
 
   return (
     <div className="login-form">
@@ -78,6 +85,12 @@ const Login = () => {
       <Button type="primary" style={{width: "100%"}} onClick={() => history.push("/register")}>Register</Button>
     </Form.Item>
   </Form>
+  <Alert
+        message={alertMsg}
+        type='info'
+        showIcon
+        style={{ marginBottom: 21 }}
+      />
   <a className="login-portfolio" href="https://shubham-nazare1.web.app/" rel="noopener noreferrer" target="_blank">MY PORTFOLIO HERE</a>
   </div>
   )
