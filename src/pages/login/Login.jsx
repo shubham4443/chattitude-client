@@ -37,7 +37,7 @@ const Login = () => {
 
   return (
     <div className="login-form">
-    {!isMobileScreen && <img src={Chattitude} alt="chattitude" style={{width: '100%', height: 'auto'}}/>}
+    {/* {!isMobileScreen && <img src={Chattitude} alt="chattitude" style={{width: '100%', height: 'auto'}}/>} */}
     <Form
     name="basic"
     initialValues={{
