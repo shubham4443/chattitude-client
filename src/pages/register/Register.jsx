@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Alert } from 'antd';
 import { useHistory } from 'react-router-dom';
 
 //services
@@ -35,6 +35,14 @@ const Register = () => {
     });
   };
 
+  const alertMsg = (
+    <div>
+      Info <br />
+      After successful registration, check your inbox for a verification email and
+      click on the link provided to verify your email
+    </div>
+  );
+
   return (
     <div className='login-form'>
       <Form
@@ -57,11 +65,8 @@ const Register = () => {
           <Input placeholder='Username' />
         </Form.Item>
 
-        <Form.Item
-        name='email'
-          rules={[{ type: 'email' }]}
-        >
-          <Input placeholder="Email"/>
+        <Form.Item name='email' rules={[{ type: 'email' }]}>
+          <Input placeholder='Email' />
         </Form.Item>
 
         <Form.Item
@@ -82,6 +87,12 @@ const Register = () => {
           </Button>
         </Form.Item>
       </Form>
+      <Alert
+        message={alertMsg}
+        type='info'
+        showIcon
+        style={{ marginBottom: 21 }}
+      />
     </div>
   );
 };

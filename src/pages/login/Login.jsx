@@ -5,11 +5,12 @@ import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {set} from 'automate-redux';
 import Chattitude from '../../assets/large_chattitude.png';
-
+import {subscribeUser} from '../../subscription';
 //services
 import {login} from '../../services/authenticate';
 //utils
 import {notify} from '../../utils';
+import { subscribeToPushNoti } from '../../services/users';
 
 const Login = () => {
 
@@ -29,6 +30,8 @@ const Login = () => {
       dispatch(set("profile.name", data.name))
       dispatch(set("uiState.isLoggedIn", true))
       history.push("/");
+      subscribeUser()
+      .then(subscription => subscribeToPushNoti(data.name, subscription));
     })
   };
 

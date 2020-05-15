@@ -10,6 +10,7 @@
     "automate-redux": "^1.1.0",
     "axios": "^0.19.2",
     "babel-plugin-import": "^1.13.0",
+    "cra-append-sw": "^2.7.0",
     "customize-cra": "^0.9.1",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
@@ -27,7 +28,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "react-app-rewired build && cra-append-sw --skip-compile ./public/custom-sw.js",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },

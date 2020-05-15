@@ -11,6 +11,7 @@ import FriendsBox from '../../components/home/FriendsBox';
 import ChatBox from '../../components/home/ChatBox';
 // antd
 import { Row, Col } from 'antd';
+import { unsubscribeToPushNoti } from '../../services/users';
 
 const styles = {
   chatBox: {
@@ -29,6 +30,7 @@ const Home = () => {
   const [index, setIndex] = useState(0);
   const chatrooms = useSelector((state) => state.chatrooms);
   const isMobileScreen = useSelector((state) => state.uiState.isMobileScreen);
+  const name = useSelector(state => state.profile.name);
 
   useEffect(() => {
     chatrooms.forEach((val) => {
@@ -42,6 +44,7 @@ const Home = () => {
         notify('error', 'Could not logout. There was some error', '', 5);
         return;
       }
+      unsubscribeToPushNoti(name);
       dispatch(set('uiState.isLoggedIn', false));
       dispatch(set('profile.name', ''));
       dispatch(reset('currentChat'));
