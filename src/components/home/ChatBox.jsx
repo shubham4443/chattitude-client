@@ -38,7 +38,7 @@ const ChatBox = ({socket, slideRight}) => {
           style={{ float: 'left', marginLeft: 10, marginTop: 7 }}
           onClick={() => {dispatch(increment("uiState.counter"));slideRight()}}
         />
-        <b>{friendName}</b>
+        <b>{friendName ? friendName : "Choose a friend to chat"}</b>
       </div>
       <MessageList
       className='message-list'
