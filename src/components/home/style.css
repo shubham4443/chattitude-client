@@ -28,9 +28,10 @@
   border-radius: 25px 25px 0px 0px;
   padding-top: 15px;
   box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  background-image: url('../../assets/chatbox_background.jpg');
+  background-image: url('../../assets/anime3.gif');
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .chat-box-title {
