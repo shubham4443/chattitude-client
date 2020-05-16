@@ -15,12 +15,17 @@ const ChatBox = ({socket, slideRight}) => {
   const friendName = useSelector(state => state.currentChat.friendName);
   const currentChatroom_id = useSelector(state => state.currentChat.chatroom_id);
 
-  useEffect(() => {
-    socket.on('message', (docs) => {
-      if(currentChatroom_id === docs.chatroom_id) {
+  const messageListener = (docs) => {
+    if(currentChatroom_id === docs.chatroom_id) {
       dispatch(push("chats", docs))
       }
-    })
+  }
+
+  useEffect(() => {
+    socket.on('message', messageListener)
+    return () => {
+      socket.off('message', messageListener)
+    }
   }, [socket, currentChatroom_id, dispatch])
 
   const onSend = (value) => {
