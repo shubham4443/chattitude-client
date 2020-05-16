@@ -1,3 +1,5 @@
+const version = "1.1.1";
+
 self.addEventListener('push', event => {
   const data = event.data.json()
   console.log('New notification', data)

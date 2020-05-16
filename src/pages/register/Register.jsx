@@ -65,7 +65,7 @@ const Register = () => {
           <Input placeholder='Username' />
         </Form.Item>
 
-        <Form.Item name='email' rules={[{ type: 'email' }]}>
+        <Form.Item name='email' rules={[{ type: 'email', required: true, message: 'Input your email!' }]}>
           <Input placeholder='Email' />
         </Form.Item>
 
