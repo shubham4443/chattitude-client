@@ -1,6 +1,6 @@
 # Chattitude Client Code - React
 
-## Dependencies used:
+## Dependencies used
 * Ant Design
 * Automate Redux
 * Axios
